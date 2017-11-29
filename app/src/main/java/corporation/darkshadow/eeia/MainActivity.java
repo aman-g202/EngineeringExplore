@@ -116,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadNavHeader() {
         // name, website
-        txtName.setText("Aman Gupta");
-        txtEmail.setText("www.ZooRoo.in");
+        txtName.setText("Acropolis");
+        txtEmail.setText("Engineering Explore");
 
         // loading header background image
         Glide.with(this).load(urlNavHeaderBg)
