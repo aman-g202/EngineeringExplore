@@ -155,10 +155,11 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
         Login service = check.create(Login.class);
         Call<Users> usersCall = service.checkUser(mobile,password);
+//        Toast.makeText(LoginActivity.this,"Aman hey",Toast.LENGTH_LONG).show();
         usersCall.enqueue(new Callback<Users>() {
             @Override
             public void onResponse(Call<Users> call, Response<Users> response) {
-              //  progressBar.setVisibility(View.INVISIBLE);
+//                Toast.makeText(LoginActivity.this,"Aman hey",Toast.LENGTH_LONG).show();
                 progress.dismiss();
                 String output = response.body().getResult();
                 if (output.equals("Mobile Number or Password may be incorrect")){
@@ -171,7 +172,6 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
                 }
-
             }
 
             @Override
@@ -179,6 +179,33 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("failure",t.getMessage());
             }
         });
+
+
+//        usersCall.enqueue(new Callback<Users>() {
+//            @Override
+//            public void onResponse(Call<Users> call, Response<Users> response) {
+//              //  progressBar.setVisibility(View.INVISIBLE);
+//                Toast.makeText(LoginActivity.this,"Aman hey",Toast.LENGTH_LONG).show();
+//                progress.dismiss();
+//                String output = response.body().getResult();
+//                if (output.equals("Mobile Number or Password may be incorrect")){
+//                    Toast.makeText(LoginActivity.this,output,Toast.LENGTH_LONG).show();
+//                    Intent intent = new Intent(LoginActivity.this,LoginActivity.class);
+//                    startActivity(intent);
+//                }
+//                else{
+//                    Toast.makeText(LoginActivity.this,output,Toast.LENGTH_LONG).show();
+//                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+//                    startActivity(intent);
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Users> call, Throwable t) {
+//                Log.d("failure",t.getMessage());
+//            }
+//        });
     }
 
     private boolean validateNumber() {
