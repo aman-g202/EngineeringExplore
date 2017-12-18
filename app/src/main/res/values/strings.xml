@@ -68,4 +68,8 @@
     <string name="action_mark_all_read">Mark All as Read</string>
     <string name="privacy_policy">Legal Policy</string>
 
+
+    <!--Card View Strings-->
+    <string name="backdrop_title">ENGINEERING WORLD</string>
+    <string name="backdrop_subtitle">This Field has 10 branch</string>
 </resources>
